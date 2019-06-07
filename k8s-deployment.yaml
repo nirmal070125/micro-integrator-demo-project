@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       -
-        image: wso2/micro-integrator-demo:latest
+        image: wso2/micro-integrator-demo:1301
         name: mi-getting-started
         imagePullPolicy: IfNotPresent
         ports:

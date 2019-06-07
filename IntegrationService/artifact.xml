@@ -2,4 +2,10 @@
     <artifact name="forwardOrderApi" groupId="com.example.IntegrationService.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/api/forwardOrderApi.xml</file>
     </artifact>
+    <artifact name="dlc_store" groupId="com.example.IntegrationService.message-store" version="1.0.0" type="synapse/message-store" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/message-stores/dlc_store.xml</file>
+    </artifact>
+    <artifact name="OrderMgtAPI" groupId="com.example.IntegrationService.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/OrderMgtAPI.xml</file>
+    </artifact>
 </artifacts>

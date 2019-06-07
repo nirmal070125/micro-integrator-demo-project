@@ -1,15 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<api context="/forward" name="forwardOrderApi" xmlns="http://ws.apache.org/ns/synapse">
-    <resource methods="POST">
+<api context="/myorders" name="forwardOrderApi" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/orderid/{ID}">
         <inSequence>
-            <call>
+            <send>
                 <endpoint>
-                    <http method="get" uri-template="http://www.mocky.io/v2/5cf98874340000315901b5b6"/>
+                    <http method="get" uri-template="http://ballerina-guides-restful-service.default.svc.cluster.local:9090/ordermgt/order/{uri.var.ID}"/>
                 </endpoint>
-            </call>
-            <respond/>
+            </send>
         </inSequence>
-        <outSequence/>
+        <outSequence>
+            <log level="full"/>
+            <respond/>
+        </outSequence>
+        <faultSequence>
+            <log level="custom">
+                <property name="Fault happened" value="Sending to the DLC store"/>
+            </log>
+        </faultSequence>
+    </resource>
+    <resource methods="POST" uri-template="/orderid">
+        <inSequence>
+            <send>
+                <endpoint>
+                    <http method="post" uri-template="http://ballerina-guides-restful-service.default.svc.cluster.local:9090/ordermgt/order/"/>
+                </endpoint>
+            </send>
+        </inSequence>
+        <outSequence>
+            <log level="full"/>
+            <respond/>
+        </outSequence>
         <faultSequence/>
     </resource>
 </api>
