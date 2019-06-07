@@ -2,7 +2,11 @@
 <api context="/forward" name="forwardOrderApi" xmlns="http://ws.apache.org/ns/synapse">
     <resource methods="POST">
         <inSequence>
-            <call/>
+            <call>
+                <endpoint>
+                    <http method="get" uri-template="http://www.mocky.io/v2/5cf98874340000315901b5b6"/>
+                </endpoint>
+            </call>
             <respond/>
         </inSequence>
         <outSequence/>
