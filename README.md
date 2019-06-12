@@ -3,6 +3,8 @@
 ## Pre-requisites 
 - Running k8s cluster with Ballerina sample - https://ballerina.io/learn/by-guide/restful-service/ running.
 
+## Demo Steps
+
 Use following command to build your micro-integrator docker image which contains your composite integration application. Note that `1301` below donates your image version.
 
 ```docker  build -t wso2/micro-integrator-demo:1301 .```
