@@ -19,5 +19,4 @@
 # Base image
 FROM wso2/micro-integrator:1.0.0
 
-COPY mysql-connector-java-5.1.26.jar /home/wso2carbon/wso2mi/lib
 COPY IntegrationServiceCompositeApplication/target/IntegrationServiceCompositeApplication_1.0.0.car /home/wso2carbon/wso2mi/repository/deployment/server/carbonapps
