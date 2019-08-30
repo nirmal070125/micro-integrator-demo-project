@@ -15,6 +15,10 @@ Update the k8s deployment with the new image;
 
 ```sed -i.bak 's#wso2/micro-integrator-demo:latest#wso2/micro-integrator-demo:1301#' k8s-deployment.yaml```
 
+If you do not have the namespace wso2; create the namespace using;
+
+```kubectl create -f wso2-namespace-dev.json```
+
 Redeploy the deployment to the k8s cluster;
 
 ```kubectl --namespace=wso2 apply -f k8s-deployment.yaml```
