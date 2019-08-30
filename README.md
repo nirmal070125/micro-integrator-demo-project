@@ -7,10 +7,6 @@
 
 Use following command to build your micro-integrator docker image which contains your composite integration application. Note that `1301` below donates your image version. 
 
-Download mysql-connector-java-5.1.26.jar and copy into the micro-integrator-demo-project dir
-
-```docker build -t wso2/micro-integrator-demo:1301 .```
-
 Update the k8s deployment with the new image;
 
 ```sed -i.bak 's#wso2/micro-integrator-demo:latest#wso2/micro-integrator-demo:1301#' k8s-deployment.yaml```
